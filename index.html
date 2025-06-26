@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jogo da velha</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+    <!-- google gonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <!-- gootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+     <div class="banner">
+        <video autoplay muted loop>
+            <source src="img/video-fundo.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="#">jogo da <span>velha</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre o jogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#grupo">Nosso grupo</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Jogar
+                        </a>
+                        <ul class="dropdown-menu bg-light">
+                            <li><a class="dropdown-item text-black" href="jogoia.html">Jogo vs IA</a></li>
+                            <li><a class="dropdown-item text-black" href="jogoamigo.html">Jogo vs Amigo</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- homepage -->
+    <section id="sobre" class="home container">
+        <div class="row align-items-center">
+            <div class="col-md-8 offset-md-2">
+                <div class="tag mb-3">Trabalho de Interface Web II</div>
+                <h1 class="main-title">JOGO DA VELHA</h1>
+                <p class="subtitle">Simples, clássico e sempre desafiador!</p>
+                <li class="btn quote-btn ms-3"><a class="nav-link" href="#jogar">JOGAR</a></li>
+            </div>
+        </div>
+    </section>
+
+    <!-- ondas -->
+    <section class="ondas-box">
+        <div class="onda" id="onda1"></div>
+        <div class="onda" id="onda2"></div>
+        <div class="onda" id="onda3"></div>
+        <div class="onda" id="onda4"></div>
+
+    </section>
+
+    <!-- sobre o jogo -->
+   <section class="sobre-jogo sec">
+        <h1 class="titulo">SOBRE O JOGO</h1>
+        <div class="container-jogo">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                        <p>
+                           O Jogo da Velha, também conhecido como "tic-tac-toe" ou "três em linha", é um dos jogos de estratégia mais populares e simples do mundo. Jogadores se revezam marcando espaços em uma grade 3x3 com "X" e "O", e o objetivo é formar uma linha com três símbolos iguais — na horizontal, vertical ou diagonal.
+                        </p>
+                        <p>
+                            Apesar de sua simplicidade, o jogo estimula o raciocínio lógico, a atenção e o pensamento estratégico. É ideal para todas as idades e pode ser jogado tanto em papel quanto digitalmente, sendo uma excelente opção para momentos rápidos de diversão.
+                        </p>
+                        <p>
+                            Neste projeto, o clássico Jogo da Velha ganha uma nova roupagem, com um visual moderno e uma interface interativa, pensado para desafiar seus amigos ou jogar contra a máquina. Prepare-se para colocar sua mente à prova!
+                        </p>
+                    </div>
+                    <div class="col">
+                       <img src="img/mao-jogo.png" alt="Imagem do Jogo" class="flutuar" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- sobre nós -->
+    <section id="grupo" class="sobre-grupo sec">
+        <h1 class="titulo">SOBRE O GRUPO</h1>
+        <div class="container-jogo">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                        <p style="text-align: center, margin-tpo;">
+                           Somos estudantes da Etec Maria Cristina Medeiros, cursando o Ensino Médio com habilitação técnica em Informática para Internet. Este projeto foi desenvolvido para a disciplina de Interface Web II, com o objetivo de aplicar na prática os conhecimentos adquiridos
+                        </p>
+                       
+                        <div class="grupo-fotos">
+                            <div class="linha linha-topo">
+                                <div class="foto-circulo">
+                                <img src="img/ftana.JPG" alt="Integrante 1">
+                                <p>Ana Clara</p>
+                                </div>
+                                <div class="foto-circulo">
+                                <img src="img/ftbya.jpg" alt="Integrante 2">
+                                <p>Byanca Lourenço</p>
+                                </div>
+                            </div>
+                            <div class="linha linha-baixo">
+                                <div class="foto-circulo">
+                                <img src="img/ftni.jpg" alt="Integrante 3">
+                                <p>Nicole Modesto</p>
+                                </div>
+                                <div class="foto-circulo">
+                                <img src="img/ftthais.JPG" alt="Integrante 4">
+                                <p>Thaís Abe</p>
+                                </div>
+                                <div class="foto-circulo">
+                                <img src="img/ftvitor.png" alt="Integrante 5">
+                                <p>Vitor Lopes</p>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </section>     
+
+   <!-- Escolha o Jogo -->
+    <!-- Onda no topo -->
+    <section id="jogar" class="escolhasec sec py-5 bg-light position-relative">
+    <!-- Onda no topo da section -->
+    <div class="onda-top">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path fill="#f8f9fa" d="M0,40 C360,120 1080,0 1440,80 L1440,0 L0,0 Z">
+            <animate attributeName="d" dur="6s" repeatCount="indefinite"
+            values="
+                M0,40 C360,120 1080,0 1440,80 L1440,0 L0,0 Z;
+                M0,30 C360,100 1080,20 1440,70 L1440,0 L0,0 Z;
+                M0,40 C360,120 1080,0 1440,80 L1440,0 L0,0 Z
+            " />
+        </path>
+        </svg>
+    </div>
+    <div class="container">
+        <div class="row g-4">
+        <!-- Minimax -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm">
+            <div class="card-body text-left">
+                <h5 class="card-title">Jogue contra uma IA!</h5>
+                <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p>
+                    Desafie uma inteligência artificial que nunca erra! Será que você consegue vencer?
+                    </p>
+                    <a href="jogoia.html" class="btn jogabtn text-left" role="button">Jogue Agora!</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/robovs.png" alt="Imagem do um Robo" class="img-fluid flutuar2 rounded">
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Contra Amigo -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm">
+            <div class="card-body text-left">
+                <h5 class="card-title">Jogue contra um Amigo!</h5>
+                <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p>
+                    Duas mentes, um tabuleiro! Dispute com seus amigos! Quem será que vai ganhar?
+                    </p>
+                    <a href="jogoamigo.html" class="btn jogabtn text-left" role="button">Jogue Agora!</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/amigovs.png" alt="Imagem de Mãos" class="img-fluid flutuar2 rounded">
+                </div>
+                
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

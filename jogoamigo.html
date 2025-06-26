@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="css/contraamg.css">
+
+</head>
+<body>
+    
+     
+
+    <div class="cards">
+        <div class="card" onclick="jogar(0)">
+
+        </div>
+
+        <div class="card" onclick="jogar(1)">
+
+        </div>
+
+        <div class="card" onclick="jogar(2)">
+
+        </div>
+
+    </div>
+
+    <div class="cards">
+        <div class="card" onclick="jogar(3)">
+
+        </div>
+
+        <div class="card" onclick="jogar(4)">
+
+        </div>
+
+        <div class="card" onclick="jogar(5)">
+
+        </div>
+
+    </div>
+
+    <div class="cards">
+        <div class="card" onclick="jogar(6)">
+
+        </div>
+
+        <div class="card" onclick="jogar(7)">
+
+        </div>
+
+        <div class="card" onclick="jogar(8)">
+
+        </div>
+
+    </div>
+
+    <div id="status">Vez do jogador X</div>
+
+        <button onclick="reiniciar()">Reiniciar</button>
+        <a href="index.html" class="btn-link">Voltar</a>
+
+
+</body>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    const cells = document.querySelectorAll(".card");
+    const statusjogador = document.getElementById('status');
+
+    let tabuleiro = Array(9).fill(null); // faz com que todas as casas sejam vazias
+    let jogadoratual = 'X';
+    let fimjogo = false;
+
+
+    function jogar(i) {
+        if (tabuleiro[i] || fimjogo) return; //ignora o clique se ja acabou o jogo ou se ja jogou naquela posição
+        tabuleiro[i] = jogadoratual;  //salva quem jogou nessa posição
+
+        const icon = document.createElement('i'); //coloca o icon dentro do lugar e 'seta' eles com o lucide
+        icon.setAttribute('data-lucide', jogadoratual === 'X' ? 'x' : 'circle');
+        cells[i].appendChild(icon);
+        lucide.createIcons();
+
+
+        const vencedor = verificarVitoria(); //coloca para ver se alguem venceu o jogo, se nao continua
+        if (vencedor) {
+            statusjogador.textContent = vencedor === 'Empate' ? 'Empate!' : `Vitória de ${vencedor}`;
+            fimjogo = true;
+
+        } else {
+            jogadoratual = jogadoratual === 'X' ? 'O' : 'X';
+            statusjogador.textContent = `Vez do Jogador ${jogadoratual}`;
+        }
+    }
+
+    function verificarVitoria() { //possiveis combinações vencedoras
+        const combinacoes = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6],
+        ];
+
+        for (const [a, b, c] of combinacoes) { //se alguma das combinações foi feita por um jogador
+            if (tabuleiro[a] && tabuleiro[a] === tabuleiro[b] && tabuleiro[a] === tabuleiro[c]) {
+                return tabuleiro[a];
+            }
+        }
+
+        return tabuleiro.every(Boolean) ? 'Empate' : null; //se tiver tudo completo e ngm venceu da empate
+    }
+
+    function reiniciar() { //para reiniciar
+        tabuleiro = Array(9).fill(null);
+        jogadoratual = 'X';
+        fimjogo = false;
+        statusjogador.textContent = 'Vez do Jogador X';
+        cells.forEach(cell => cell.innerHTML = '');
+        lucide.createIcons();
+    }
+</script>
+
+</html>

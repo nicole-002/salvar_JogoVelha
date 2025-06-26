@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Luckiest+Guy&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2vh 2vw;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #fff;
+  background: linear-gradient(145deg, #371570, #8500c7);
+  background-size: 400% 400%;
+  animation: moveBackground 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px; /* espaçamento maior entre células */
+  width: 100%;
+}
+
+.cell {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600; /* para ficar um pouco mais grossa como no primeiro */
+  font-size: 6vw;
+  color: white;
+  /* restante igual */
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.cell:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+
+#end-game {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#reset-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#reset-button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.btn-link{
+  text-decoration: underline;
+  border-color: none;
+  color: white;
+  margin-top: 0.8%;
+}
+
+.btn-link:hover{
+  transform: scale(1.05);
+}
+
+#status {
+    margin-top: 1%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #00000030;
+    padding: 1%;
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    text-align: center;
+    max-width: 90%;
+}
+
+/* Responsividade */
+@media (max-width: 500px) {
+  .cell {
+    font-size: 10vw;
+  }
+
+  #end-game {
+    font-size: 1rem;
+  }
+
+  #reset-button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@keyframes moveBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
